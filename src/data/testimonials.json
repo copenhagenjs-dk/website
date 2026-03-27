@@ -1,0 +1,42 @@
+[
+  {
+    "quote": "Amazing community! Always learn something new and meet great people.",
+    "author": "Community Member",
+    "role": "Frontend Developer"
+  },
+  {
+    "quote": "The talks are always high quality and relevant to what we do daily.",
+    "author": "Community Member",
+    "role": "Software Engineer"
+  },
+  {
+    "quote": "Best tech meetup in Copenhagen. Very welcoming to newcomers.",
+    "author": "Community Member",
+    "role": "Junior Developer"
+  },
+  {
+    "quote": "Love the variety of topics covered. From React to Node.js to TypeScript.",
+    "author": "Community Member",
+    "role": "Full Stack Developer"
+  },
+  {
+    "quote": "Great for networking and staying up to date with the JS ecosystem.",
+    "author": "Community Member",
+    "role": "Tech Lead"
+  },
+  {
+    "quote": "The organizers do a fantastic job. Everything runs smoothly every time.",
+    "author": "Community Member",
+    "role": "Developer"
+  },
+  {
+    "quote": "Perfect mix of learning and socializing. Highly recommend!",
+    "author": "Community Member",
+    "role": "Web Developer"
+  },
+  {
+    "quote": "Found my current job through connections made at CopenhagenJS!",
+    "author": "Community Member",
+    "role": "Senior Developer"
+  }
+]

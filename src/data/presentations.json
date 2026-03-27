@@ -1,0 +1,180 @@
+[
+  {
+    "title": "Introduction to React Native",
+    "keyword": "introduction to react native",
+    "speaker": "Athinodoros Sgouromallis",
+    "links": [
+      { "label": "Slides", "url": "https://drive.google.com/file/d/1AaTEBMLe2-p6mvxn1o4VnLmA9qg0WADy/view?usp=share_link" }
+    ]
+  },
+  {
+    "title": "Dependency Injection in Node.js, TypeScript & Tactile",
+    "keyword": "dependency injection",
+    "speaker": "Juan Cruz Vidiri",
+    "links": [
+      { "label": "Slides", "url": "https://docs.google.com/presentation/d/1VC_sm7pavKDexpzTqp7m_ivR2A2BmjUKWGQha4bIfSE/edit?usp=sharing" },
+      { "label": "Code", "url": "https://gist.github.com/jcvidiri/11050f4babd11afab95c8425703a4b57" }
+    ]
+  },
+  {
+    "title": "Staying Relevant as a Programmer in the World with LLMs",
+    "keyword": "staying relevant",
+    "speaker": "Eduard Kyvenko",
+    "links": [
+      { "label": "Slides", "url": "https://halfzebra.github.io/staying-relevant-as-a-programmer-in-the-world-with-llms" }
+    ]
+  },
+  {
+    "title": "Unmasking Crawlers: How Modern Web Security Fights Automated Bots",
+    "keyword": "unmasking crawlers",
+    "speaker": "Paul Lungu",
+    "links": [
+      { "label": "Slides", "url": "https://docs.google.com/presentation/d/1ZoFwOuT3eQNGMHj03LqXL6WjfFX73rs16I4zrbPQIFg/edit?usp=sharing" },
+      { "label": "Notes", "url": "https://dariye.notion.site/archive-15466718e2cc80b1872de041172182e9" }
+    ]
+  },
+  {
+    "title": "No Build: Writing JS for the Browser Without a Build Step",
+    "keyword": "no build",
+    "speaker": "Rohit Sharma",
+    "links": [
+      { "label": "Slides", "url": "https://rohit.sh/talks/no-build/1" },
+      { "label": "VS Code Extension", "url": "https://marketplace.visualstudio.com/items?itemName=Orta.vscode-twoslash-queries" }
+    ]
+  },
+  {
+    "title": "Money is Not a Number",
+    "keyword": "money is not a number",
+    "speaker": "Jonathan M. Hethey",
+    "links": [
+      { "label": "Slides", "url": "https://slides.jonathanmh.com/#1" }
+    ]
+  },
+  {
+    "title": "Let's Build a Vibe-Coding Agent!",
+    "keyword": "vibe-coding",
+    "speaker": "Alexey Taktarov",
+    "links": [
+      { "label": "Slides", "url": "https://vibe-coding-agent-talk.vercel.app/1" },
+      { "label": "Repo", "url": "https://github.com/molefrog/vibe-coding-agent-talk/tree/main" },
+      { "label": "Video", "url": "https://youtu.be/NGNTJ1q9Bjo?si=v5m4v_IjdB5eZ-Du" }
+    ]
+  },
+  {
+    "title": "Returns Undefined",
+    "keyword": "returns undefined",
+    "speaker": "Michail Roditis",
+    "links": [
+      { "label": "Repo", "url": "https://github.com/ylovits/returns-undefined" }
+    ]
+  },
+  {
+    "title": "Functional Core, Imperative Shell",
+    "keyword": "functional core",
+    "speaker": "Martin Svarrer Christensen",
+    "links": [
+      { "label": "Slides", "url": "https://docs.google.com/presentation/d/1dyDCBrFwY4P8MxQ4xSf6QecklL5Yo9xqIdROtSwBVrQ/mobilepresent?slide=id.p" }
+    ]
+  },
+  {
+    "title": "No Browser - No Problem",
+    "keyword": "no browser",
+    "speaker": "Julian Hansen",
+    "links": [
+      { "label": "Slides", "url": "https://codeberg.org/johncoffee/slides/src/branch/dist" }
+    ]
+  },
+  {
+    "title": "React Server Components",
+    "keyword": "react server components",
+    "speaker": "Tomas Sabol",
+    "links": [
+      { "label": "Slides", "url": "https://drive.google.com/file/d/1Wxqx7zd-EiqliSRYIU32Lc-Lsa44jiDz/view?usp=share_link" },
+      { "label": "Repo", "url": "https://github.com/tomassabol/cphjs-RSC" }
+    ]
+  },
+  {
+    "title": "50 Hours and a Dream: How We Built an AI System",
+    "keyword": "50 hours",
+    "speaker": "Michael Sungsoo Fuglø",
+    "links": [
+      { "label": "Slides", "url": "https://drive.google.com/file/d/1sh2dTQtlR8T1pyWcC6kcpXzWDHnTpJXB/view?usp=share_link" }
+    ]
+  },
+  {
+    "title": "A Practical Testing Strategy with Fresh Mocks",
+    "keyword": "fresh mocks",
+    "speaker": "Marina Kuranda",
+    "links": [
+      { "label": "Slides", "url": "https://1drv.ms/p/c/d9a24d42aa758b46/EaH0BwYhT21Ep7Vm3yuWyf8Bl3qMEhq3D3I2FdcP9hyWLw?e=IYFlhB" }
+    ]
+  },
+  {
+    "title": "Intro to SvelteKit",
+    "keyword": "sveltekit",
+    "speaker": "Sam Peterson",
+    "links": [
+      { "label": "Slides", "url": "https://github.com/s-petey/sveltekit-intro-dinosaurs/blob/main/static/sveltekit_talk_sam.pdf" }
+    ]
+  },
+  {
+    "title": "How to Find a Software Developer Job",
+    "keyword": "find a software developer job",
+    "speaker": "Alvaro Agamez",
+    "links": [
+      { "label": "Slides", "url": "https://slides.com/aagamezl/how-to-find-a-software-developer-job/" }
+    ]
+  },
+  {
+    "title": "Deno",
+    "keyword": "deno",
+    "speaker": "Ivan Horvat",
+    "links": [
+      { "label": "Repo", "url": "https://github.com/Horki/copenhagenjs-deno" }
+    ]
+  },
+  {
+    "title": "The Unreasonable Effectiveness of TypeScript",
+    "keyword": "unreasonable effectiveness",
+    "speaker": "Denis Lukichev",
+    "links": [
+      { "label": "Slides", "url": "https://psea.github.io/typescript-typelevel-binary-arithmetic-slidev/1" },
+      { "label": "Repo", "url": "https://github.com/psea/typescript-typelevel-binary-arithmetic" },
+      { "label": "Related", "url": "https://www.learningtypescript.com/articles/extreme-explorations-of-typescripts-type-system" }
+    ]
+  },
+  {
+    "title": "Captain Furguson the Cat",
+    "keyword": "captain furguson",
+    "speaker": "Hamid Reza",
+    "links": [
+      { "label": "Blog Post", "url": "https://viki.studio/blog/captain-furguson-the-cat" },
+      { "label": "Project", "url": "https://offlinegpt.store/" }
+    ]
+  },
+  {
+    "title": "Writing a Chip8 Emulator in JavaScript",
+    "keyword": "chip8",
+    "speaker": "Elvis Adomnica",
+    "links": [
+      { "label": "Slides", "url": "https://docs.google.com/presentation/d/1U-vMP8tXrK5QmZoKcniNDNF7WAaUXsylb6_UiFNtp2k/edit?usp=sharing" },
+      { "label": "Repo", "url": "https://github.com/elvisvoer/chip8" }
+    ]
+  },
+  {
+    "title": "My journey to entrepreneurship",
+    "keyword": "my journey to entrepreneurship",
+    "speaker": "Bachir Kurdi",
+    "links": [
+      { "label": "Slides", "url": "https://docs.google.com/presentation/d/1Frc-eTXSdVqxUnCnjqFOpTx08ZGtowm8/edit?usp=drive_link" }
+    ]
+  },
+  {
+    "title": "The Maersk Design System",
+    "keyword": "the maersk design system",
+    "speaker": "Mohsen Afsia",
+    "links": [
+      { "label": "Slides", "url": "https://docs.google.com/presentation/d/1TCrsaCnFN2aZH8n8bm7u_mF7Zg2hbNgV/edit?usp=drive_link&ouid=103497895686774231728&rtpof=true&sd=true" }
+    ]
+  }
+]
