@@ -1,5 +1,6 @@
 import { Metadata } from 'next'
 import Image from 'next/image'
+import { BASE_PATH } from '@/lib/constants'
 
 export const metadata: Metadata = {
   title: 'About',
@@ -191,7 +192,7 @@ export default function AboutPage() {
                 signage in relevant places to give our attendees some breadcrumbs to follow.
               </p>
               <a
-                href="/logo.png"
+                href={`${BASE_PATH}/logo.png`}
                 download="copenhagenjs-logo.png"
                 className="inline-flex items-center gap-2 text-sm border border-dark/20 text-dark px-6 py-3 rounded-full hover:border-dark transition-colors"
               >
@@ -203,7 +204,7 @@ export default function AboutPage() {
             </div>
             <div className="flex justify-center lg:justify-end">
               <Image
-                src="/logo.png"
+                src={`${BASE_PATH}/logo.png`}
                 alt="CopenhagenJS Logo"
                 width={240}
                 height={240}

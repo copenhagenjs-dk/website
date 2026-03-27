@@ -3,6 +3,7 @@
 import { useState } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
+import { BASE_PATH } from '@/lib/constants'
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -13,7 +14,7 @@ export default function Header() {
         <div className="flex items-center justify-between">
           <Link href="/" className="flex items-center gap-3 group">
             <Image
-              src="/logo.png"
+              src={`${BASE_PATH}/logo.png`}
               alt="CopenhagenJS"
               width={36}
               height={36}
