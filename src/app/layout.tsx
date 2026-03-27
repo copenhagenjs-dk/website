@@ -1,5 +1,4 @@
 import type { Metadata } from 'next'
-import { BASE_PATH } from '@/lib/constants'
 import { Inter } from 'next/font/google'
 import './globals.css'
 
@@ -38,7 +37,7 @@ export const metadata: Metadata = {
       'Join the largest JavaScript community in Copenhagen. Monthly meetups with talks, networking, and fun with fellow developers.',
     images: [
       {
-        url: `${BASE_PATH}/og-image.png`,
+        url: 'https://copenhagenjs-dk.github.io/website/og-image.png',
         width: 1200,
         height: 630,
         alt: 'CopenhagenJS - Copenhagen JavaScript Community',
@@ -50,7 +49,7 @@ export const metadata: Metadata = {
     title: 'CopenhagenJS - Copenhagen JavaScript Community',
     description:
       'Join the largest JavaScript community in Copenhagen. Monthly meetups with talks, networking, and fun.',
-    images: [`${BASE_PATH}/og-image.png`],
+    images: ['https://copenhagenjs-dk.github.io/website/og-image.png'],
   },
   robots: {
     index: true,
