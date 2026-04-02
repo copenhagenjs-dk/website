@@ -1,3 +1,6 @@
+'use client'
+
+import { useEffect, useState } from 'react'
 import { getLastSyncTime } from '@/lib/meetup'
 
 function formatSyncTime(syncTime: string): string {
@@ -18,40 +21,45 @@ function formatSyncTime(syncTime: string): string {
 }
 
 export default function LastSyncStatus() {
-  const lastSync = getLastSyncTime()
+  const [formattedTime, setFormattedTime] = useState<string>('')
+  const [isLoaded, setIsLoaded] = useState(false)
 
-  if (!lastSync) {
-    // Show current build time when no sync data available
-    const buildTime = new Date().toLocaleDateString('en-DK', {
-      year: 'numeric',
-      month: 'short',
-      day: 'numeric',
-      hour: '2-digit',
-      minute: '2-digit'
-    })
+  useEffect(() => {
+    const lastSync = getLastSyncTime()
 
-    return (
-      <div className="mb-8 p-4 bg-dark/5 rounded-lg border border-dark/10">
-        <div className="text-sm text-dark/60">
-          <span>Last sync with meetup.com on {buildTime}</span>
-        </div>
-      </div>
-    )
-  }
+    if (!lastSync) {
+      // Show current build time when no sync data available
+      const buildTime = new Date().toLocaleDateString('en-DK', {
+        year: 'numeric',
+        month: 'short',
+        day: 'numeric',
+        hour: '2-digit',
+        minute: '2-digit'
+      })
+      setFormattedTime(buildTime)
+    } else {
+      const syncDate = new Date(lastSync)
+      const absoluteTime = syncDate.toLocaleDateString('en-DK', {
+        year: 'numeric',
+        month: 'short',
+        day: 'numeric',
+        hour: '2-digit',
+        minute: '2-digit'
+      })
+      setFormattedTime(absoluteTime)
+    }
 
-  const syncDate = new Date(lastSync)
-  const absoluteTime = syncDate.toLocaleDateString('en-DK', {
-    year: 'numeric',
-    month: 'short',
-    day: 'numeric',
-    hour: '2-digit',
-    minute: '2-digit'
-  })
+    setIsLoaded(true)
+  }, [])
 
   return (
     <div className="mb-8 p-4 bg-dark/5 rounded-lg border border-dark/10">
       <div className="text-sm text-dark/60">
-        <span>Last sync with meetup.com on {absoluteTime}</span>
+        {isLoaded ? (
+          <span>Last sync with meetup.com on {formattedTime}</span>
+        ) : (
+          <span>Loading sync status...</span>
+        )}
       </div>
     </div>
   )
