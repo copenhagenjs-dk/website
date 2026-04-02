@@ -76,6 +76,9 @@ Edit `src/data/testimonials.json`
 
 Automatically deploys to GitHub Pages on push to `main` branch.
 
+<img alt="copenhagenjs-dk github io_website_" src="https://github.com/user-attachments/assets/76ce0f7f-fb4f-4391-8f6c-a4baed52f8c0" />
+<img alt="copenhagenjs-dk github io_website_ (2)" src="https://github.com/user-attachments/assets/1f03fc22-5766-4f78-9439-3741f5bc896d" />
+
 ## License
 
 MIT
