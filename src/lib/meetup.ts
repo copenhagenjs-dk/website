@@ -101,19 +101,25 @@ async function fetchEventsGraphQL(
     return { events: [] }
   }
 
-  const events: MeetupEvent[] = eventsData.edges.map((edge) => ({
-    id: edge.node.id,
-    title: edge.node.title,
-    eventUrl: edge.node.eventUrl,
-    description: edge.node.description || '',
-    dateTime: edge.node.dateTime,
-    endTime: edge.node.dateTime,
-    status,
-    venue: edge.node.venue
-      ? { name: edge.node.venue.name, address: '', city: edge.node.venue.city }
-      : null,
-    going: 0,
-  }))
+  const events: MeetupEvent[] = eventsData.edges.map((edge) => {
+    const startTime = new Date(edge.node.dateTime)
+    const endTime = new Date(startTime)
+    endTime.setHours(21, 0, 0, 0) // Always end at 21:00
+
+    return {
+      id: edge.node.id,
+      title: edge.node.title,
+      eventUrl: edge.node.eventUrl,
+      description: edge.node.description || '',
+      dateTime: edge.node.dateTime,
+      endTime: endTime.toISOString(),
+      status,
+      venue: edge.node.venue
+        ? { name: edge.node.venue.name, address: '', city: edge.node.venue.city }
+        : null,
+      going: 0,
+    }
+  })
 
   return {
     events,
