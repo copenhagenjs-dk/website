@@ -1,3 +1,5 @@
+import fs from 'fs'
+import path from 'path'
 import presentationsData from '@/data/presentations.json'
 
 export interface PresentationLink {
@@ -256,4 +258,19 @@ export function extractTopicsFromEvents(events: MeetupEvent[]): Topic[] {
   }
 
   return topics
+}
+
+export function getLastSyncTime(): string | null {
+  try {
+    const cacheFile = path.join(process.cwd(), '.meetup-cache.json')
+    if (!fs.existsSync(cacheFile)) {
+      return null
+    }
+
+    const cachedData = JSON.parse(fs.readFileSync(cacheFile, 'utf8'))
+    return cachedData.lastSync || null
+  } catch (error) {
+    console.error('Error reading last sync time:', error)
+    return null
+  }
 }

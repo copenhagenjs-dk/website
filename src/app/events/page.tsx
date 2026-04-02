@@ -12,6 +12,7 @@ export const metadata: Metadata = {
 import Footer from '@/components/Footer'
 import EventCard from '@/components/EventCard'
 import PastEvents from '@/components/PastEvents'
+import LastSyncStatus from '@/components/LastSyncStatus'
 import { fetchMeetupEvents } from '@/lib/meetup'
 
 export const revalidate = 3600 // Revalidate every hour
@@ -39,6 +40,8 @@ export default async function EventsPage() {
               </a>
             </p>
           </div>
+
+          <LastSyncStatus />
 
           {/* Upcoming Events */}
           <div>

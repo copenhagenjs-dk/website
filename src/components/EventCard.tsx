@@ -24,6 +24,10 @@ function formatTime(dateString: string): string {
 
 export default function EventCard({ event }: EventCardProps) {
   const isPast = event.status === 'PAST'
+  const eventDate = new Date(event.dateTime)
+  const currentYear = new Date().getFullYear()
+  const eventYear = eventDate.getFullYear()
+  const showYear = eventYear !== currentYear
 
   return (
     <a
@@ -41,6 +45,11 @@ export default function EventCard({ event }: EventCardProps) {
           <div className={`text-4xl sm:text-5xl font-light ${isPast ? 'text-dark/60' : 'text-dark'}`}>
             {new Date(event.dateTime).getDate()}
           </div>
+          {showYear && (
+            <div className={`text-[10px] uppercase tracking-wider ${isPast ? 'text-dark/50' : 'text-dark/60'}`}>
+              {eventYear}
+            </div>
+          )}
         </div>
 
         {/* Content */}

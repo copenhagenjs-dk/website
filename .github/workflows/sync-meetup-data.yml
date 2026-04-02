@@ -1,0 +1,66 @@
+name: Sync Meetup Data
+
+on:
+  schedule:
+    # Run every night at 2 AM UTC (3/4 AM Denmark time depending on DST)
+    - cron: '0 2 * * *'
+  workflow_dispatch: # Allow manual triggering
+
+permissions:
+  contents: write
+  actions: write
+
+jobs:
+  check-sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Check for Meetup data changes
+        id: check-changes
+        run: |
+          # Run the meetup change detection script
+          node scripts/check-meetup-changes.js
+
+          # If the previous command succeeded (exit 0), changes were detected
+          if [ $? -eq 0 ]; then
+            echo "changes=true" >> $GITHUB_OUTPUT
+            echo "Meetup data changes detected - will trigger rebuild"
+          else
+            echo "changes=false" >> $GITHUB_OUTPUT
+            echo "No meetup data changes - no action needed"
+          fi
+
+      - name: Commit cache file
+        if: steps.check-changes.outputs.changes == 'true'
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add .meetup-cache.json
+          git commit -m "Update meetup data cache [skip ci]" || exit 0
+          git push
+
+      - name: Trigger deployment
+        if: steps.check-changes.outputs.changes == 'true'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            github.rest.actions.createWorkflowDispatch({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              workflow_id: 'deploy.yml',
+              ref: 'main'
+            });
+            console.log('Triggered website rebuild due to meetup data changes');
