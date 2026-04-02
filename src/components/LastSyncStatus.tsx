@@ -1,55 +1,55 @@
 'use client'
 
 import { useEffect, useState } from 'react'
-import { getLastSyncTime } from '@/lib/meetup'
-
-function formatSyncTime(syncTime: string): string {
-  const date = new Date(syncTime)
-  const now = new Date()
-  const diffMs = now.getTime() - date.getTime()
-  const diffHours = Math.floor(diffMs / (1000 * 60 * 60))
-  const diffDays = Math.floor(diffHours / 24)
-
-  if (diffDays > 0) {
-    return `${diffDays} day${diffDays > 1 ? 's' : ''} ago`
-  } else if (diffHours > 0) {
-    return `${diffHours} hour${diffHours > 1 ? 's' : ''} ago`
-  } else {
-    const diffMinutes = Math.floor(diffMs / (1000 * 60))
-    return `${diffMinutes} minute${diffMinutes > 1 ? 's' : ''} ago`
-  }
-}
 
 export default function LastSyncStatus() {
   const [formattedTime, setFormattedTime] = useState<string>('')
   const [isLoaded, setIsLoaded] = useState(false)
 
   useEffect(() => {
-    const lastSync = getLastSyncTime()
+    async function fetchSyncStatus() {
+      try {
+        const response = await fetch('/api/sync-status')
+        const data = await response.json()
 
-    if (!lastSync) {
-      // Show current build time when no sync data available
-      const buildTime = new Date().toLocaleDateString('en-DK', {
-        year: 'numeric',
-        month: 'short',
-        day: 'numeric',
-        hour: '2-digit',
-        minute: '2-digit'
-      })
-      setFormattedTime(buildTime)
-    } else {
-      const syncDate = new Date(lastSync)
-      const absoluteTime = syncDate.toLocaleDateString('en-DK', {
-        year: 'numeric',
-        month: 'short',
-        day: 'numeric',
-        hour: '2-digit',
-        minute: '2-digit'
-      })
-      setFormattedTime(absoluteTime)
+        if (!data.lastSync) {
+          // Show current time when no sync data available
+          const buildTime = new Date().toLocaleDateString('en-DK', {
+            year: 'numeric',
+            month: 'short',
+            day: 'numeric',
+            hour: '2-digit',
+            minute: '2-digit'
+          })
+          setFormattedTime(buildTime)
+        } else {
+          const syncDate = new Date(data.lastSync)
+          const absoluteTime = syncDate.toLocaleDateString('en-DK', {
+            year: 'numeric',
+            month: 'short',
+            day: 'numeric',
+            hour: '2-digit',
+            minute: '2-digit'
+          })
+          setFormattedTime(absoluteTime)
+        }
+      } catch (error) {
+        console.error('Failed to fetch sync status:', error)
+        // Fallback to current time
+        const fallbackTime = new Date().toLocaleDateString('en-DK', {
+          year: 'numeric',
+          month: 'short',
+          day: 'numeric',
+          hour: '2-digit',
+          minute: '2-digit'
+        })
+        setFormattedTime(fallbackTime)
+      } finally {
+        setIsLoaded(true)
+      }
     }
 
-    setIsLoaded(true)
+    fetchSyncStatus()
   }, [])
 
   return (
