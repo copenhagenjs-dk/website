@@ -131,24 +131,36 @@ export async function fetchMeetupEvents(): Promise<{
   upcoming: MeetupEvent[]
   past: MeetupEvent[]
 }> {
-  const upcoming: MeetupEvent[] = []
-  const past: MeetupEvent[] = []
+  const allUpcoming: MeetupEvent[] = []
+  const allPast: MeetupEvent[] = []
 
   try {
-    // Fetch upcoming events
+    // Fetch events from both ACTIVE and PAST to ensure we don't miss any
     const upcomingResult = await fetchEventsGraphQL('ACTIVE')
-    upcoming.push(...upcomingResult.events)
+    allUpcoming.push(...upcomingResult.events)
 
     // Fetch all past events with pagination
     let cursor: string | undefined
     do {
       const result = await fetchEventsGraphQL('PAST', cursor)
-      past.push(...result.events)
+      allPast.push(...result.events)
       cursor = result.nextCursor
     } while (cursor)
   } catch (error) {
     console.error('Error fetching Meetup events:', error)
   }
+
+  // Filter events by actual date to ensure correct classification
+  const now = new Date()
+  const allEvents = [...allUpcoming, ...allPast]
+
+  const upcoming = allEvents
+    .filter(event => new Date(event.dateTime) > now)
+    .sort((a, b) => new Date(a.dateTime).getTime() - new Date(b.dateTime).getTime())
+
+  const past = allEvents
+    .filter(event => new Date(event.dateTime) <= now)
+    .sort((a, b) => new Date(b.dateTime).getTime() - new Date(a.dateTime).getTime())
 
   return { upcoming, past }
 }
