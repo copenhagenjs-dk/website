@@ -52,6 +52,17 @@ describe('EventCard', () => {
     expect(screen.queryByText('Upcoming')).not.toBeInTheDocument()
   })
 
+  it('displays event time range with different start and end times', () => {
+    render(<EventCard event={mockUpcomingEvent} />)
+    // The event has different start and end times; they should not be identical
+    const timeElement = screen.getByText(/\d{2}[.:]\d{2}\s*[–-]\s*\d{2}[.:]\d{2}/)
+    expect(timeElement).toBeInTheDocument()
+    // Ensure start and end times are not identical
+    const timeText = timeElement.textContent ?? ''
+    const times = timeText.split('–').map((t) => t.trim())
+    expect(times[0]).not.toBe(times[1])
+  })
+
   it('links to meetup event page', () => {
     render(<EventCard event={mockUpcomingEvent} />)
     const link = screen.getByRole('link')

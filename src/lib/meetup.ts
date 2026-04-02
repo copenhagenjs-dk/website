@@ -44,6 +44,7 @@ interface GraphQLEvent {
   id: string
   title: string
   dateTime: string
+  endTime: string
   eventUrl: string
   description: string
   venue: {
@@ -77,7 +78,7 @@ async function fetchEventsGraphQL(
       groupByUrlname(urlname: $urlname) {
         events(filter: {status: [${status}]}, first: $first, after: $after, sort: DESC) {
           pageInfo { hasNextPage endCursor }
-          edges { node { id title dateTime eventUrl description venue { name city } } }
+          edges { node { id title dateTime endTime eventUrl description venue { name city } } }
         }
       }
     }
@@ -107,7 +108,7 @@ async function fetchEventsGraphQL(
     eventUrl: edge.node.eventUrl,
     description: edge.node.description || '',
     dateTime: edge.node.dateTime,
-    endTime: edge.node.dateTime,
+    endTime: edge.node.endTime,
     status,
     venue: edge.node.venue
       ? { name: edge.node.venue.name, address: '', city: edge.node.venue.city }
