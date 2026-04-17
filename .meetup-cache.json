@@ -1,5 +1,5 @@
 {
-  "lastSync": "2026-04-02T20:13:54.897Z",
+  "lastSync": "2026-04-17T04:53:25.581Z",
   "data": {
     "active": [
       {
@@ -14,7 +14,9 @@
             "city": "Denmark"
           }
         }
-      },
+      }
+    ],
+    "past": [
       {
         "node": {
           "id": "313898502",
@@ -27,9 +29,7 @@
             "city": "København"
           }
         }
-      }
-    ],
-    "past": [
+      },
       {
         "node": {
           "id": "313758728",
@@ -273,19 +273,6 @@
           "description": "Hello everyone,\n\nWe trust you enjoyed your holidays and found time to embark on the new year in high spirits.\nIt's time to announce the upcoming CopenhagenJS event, this time with the support of **Veo Technologies**.\n\n**\\#\\# Schedule**:\n17:00 Doors open\n17:45 Welcome\n18:00 How I created a digital assistant using JavaScript & OpenAI - Konstantinos Theologitis\n18:30 Break with food and drinks\n19:15 Form generator based on a JSON schema - Ramiro Estrella\n19:45 Raffle\n19:55 Group photo\n20:00 Socializing - Meet the community\n21:00 See you next time!\n\n**\\#\\# What is CopenhagenJS?**\nCopenhagenJS is a community group in Copenhagen for all JavaScript developers. We get together and share things we work on and like. We talk about various technologies that we either use on a day-to-day basis or aspire to use.\n\n**\\#\\# Can I present something at CopenhagenJS?**\nCopenhagenJS is for and by the community, so you are **more than welcome** to talk about things that you find interesting and we will assist you with your speaking if you are new or have any difficulties.\nYou can contact us with a private message or comment here on meetup.com, or on any social network where you can find us.\n\nRemember to follow us on **Twitter**: https://twitter.com/copenhagenjs\nLooking forward to seeing you!\n\nFriendly regards\nJonathan, Zoey, John and Svetlana",
           "venue": {
             "name": "Veo Technologies",
-            "city": "København"
-          }
-        }
-      },
-      {
-        "node": {
-          "id": "297053926",
-          "title": "CopenhagenJS November - Prosa",
-          "dateTime": "2023-11-16T17:00:00+01:00",
-          "eventUrl": "https://www.meetup.com/copenhagenjs/events/297053926/",
-          "description": "Hello everyone,\nIt is time for the November edition of **CopenhagenJS**!\n\n**\\#\\# Schedule**:\n17:00 Doors open\n17:45 Welcome\n18:00 Journey into Enigmatic Realms: Unraveling Mysteries through API Exploration - Jakub Cioslowski\n18:30 Break with food and drinks\n19:15 HTMX and Node.js/Bun: A Dynamic Duo for Web Development - Alvaro Agámez\n19:45 Group photo\n19:50 Socializing - Meet the community\n21:00 See you next time!\n\n**\\#\\# What is CopenhagenJS?**\nCopenhagenJS is a community group in Copenhagen for all JavaScript developers. We get together and share things we work on and really like. We talk about various technologies that we either use on a day-to-day basis or aspire to use.\n\n**\\#\\# Can I present something at CopenhagenJS?**\nDefinitely, CopenhagenJS is for and by the community, so you are more than welcome to talk about things that you find interesting and we will assist you with your speaking if you are new or have any difficulties. You can contact us with a private message or comment here on meetup.com, or on any social network where you can find us.\n\nRemember to follow us on Twitter: https://twitter.com/copenhagenjs\n\nLooking forward to seeing you!\n\nFriendly regards\nJonathan, Zoey, John and Svetlana",
-          "venue": {
-            "name": "Vester Farimagsgade 37A",
             "city": "København"
           }
         }
